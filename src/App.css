@@ -1,5 +1,4 @@
 /* GENERAL */
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 .app {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -24,8 +23,6 @@ h2 {
   font-weight: bold;
   color: black;
   margin-bottom: 25px;
-  /* margin: 50px 0 25px 0; */
-  /* will need to adjust for the first H2: top margin is only 25px */
 }
 
 h3 {
@@ -49,19 +46,28 @@ a {
   font-size: 22px;
 }
 
+.header .container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
 .header img {
-  height: 60px;
+  height: 42px;
   width: auto;
 }
 
 /* RESTAURANT INTRODUCTION */
+/* can't be in the container due to the responsive at 887px wide */
 .restaurantIntro {
+  max-width: 1200px;
   /* border: 3px green solid; */
   height: 260px;
   width: 100%;
   display: flex;
-  gap: 30px;
+  gap: 25px;
   padding: 40px 0;
+  margin: 0 auto;
 }
 
 .titleAndDescription {
@@ -213,6 +219,8 @@ main .container {
   font-size: 16px;
   margin-top: 10px;
   color: black;
+  /* position: fixed;
+  left: 850px; */
 }
 
 /** the validate button **/
@@ -323,7 +331,6 @@ main .container {
   }
   .restaurantIntro {
     flex-direction: column-reverse;
-    width: 100%;
     height: fit-content;
     padding-top: 0px;
   }
@@ -331,9 +338,10 @@ main .container {
   .restaurantIntro p {
     font-size: 16px;
   }
-  .container .restaurantIntro img {
+  .restaurantIntro img {
     width: 100vw;
     height: 200px;
+    object-fit: cover;
     border-radius: 0px;
   }
 }

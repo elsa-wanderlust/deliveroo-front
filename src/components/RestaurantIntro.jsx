@@ -1,7 +1,7 @@
 const RestaurantIntro = ({ restaurantInfo }) => {
   return (
     <div className="restaurantIntro">
-      <div className="titleAndDescription">
+      <div className="titleAndDescription container">
         <h1>{restaurantInfo.name}</h1>
         <p>{restaurantInfo.description}</p>
       </div>

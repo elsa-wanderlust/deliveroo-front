@@ -1,17 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import FormatPrice from "../utils/FormatPrice";
 
-const Meals = ({
-  title,
-  description,
-  price,
-  picture,
-  popular,
-  cart,
-  setCart,
-}) => {
-  // if we click on a meal item: if already in the cart, increases quantity by one,
-  // if not already in cart, add it to the cart with a quantity of 1
+const Meals = ({ mealDetails, cart, setCart }) => {
+  const { title, description, price, picture, popular } = mealDetails;
+  // if item already in the cart, increases quantity by one, if not, adds it to the cart with a quantity of 1
   const handleClick = () => {
     const copyCart = [...cart];
     let alreadyInCart = false;
@@ -42,7 +34,7 @@ const Meals = ({
           )}
         </div>
       </div>
-      {picture && <img src={picture} alt="meal picture" />}
+      {picture && <img src={picture} alt={`picture of ${title}`} />}
     </div>
   );
 };

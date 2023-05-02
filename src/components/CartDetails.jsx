@@ -1,8 +1,7 @@
 import FormatPrice from "../utils/FormatPrice";
 
-const CartDetails = (props) => {
-  const { index, item, price, quantity, cart, setCart } = props;
-  const total = (price * quantity).toFixed(2);
+const CartDetails = ({ index, itemDetails, cart, setCart }) => {
+  const { name, price, quantity } = itemDetails;
   // reduce the qty per item, if the qty is equal at 0, it will remove it from the cart
   const handleMinus = () => {
     const copyCart = [...cart];
@@ -13,6 +12,7 @@ const CartDetails = (props) => {
     }
     setCart(copyCart);
   };
+  // increases the quantity
   const handlePlus = () => {
     const copyCart = [...cart];
     copyCart[index].quantity++;
@@ -27,9 +27,9 @@ const CartDetails = (props) => {
           <span>{quantity}</span>
           <button onClick={handlePlus}>+</button>
         </div>
-        <p>{item}</p>
+        <p>{name}</p>
       </div>
-      <p>{FormatPrice(total)}</p>
+      <p>{FormatPrice(price * quantity)}</p>
     </section>
   );
 };

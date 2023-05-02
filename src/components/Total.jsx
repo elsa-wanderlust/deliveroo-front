@@ -4,7 +4,6 @@ const Total = ({ cart }) => {
   let subTotal = 0;
   for (let i = 0; i < cart.length; i++) {
     subTotal += parseFloat(cart[i].price) * cart[i].quantity;
-    console.log(typeof cart[i].price);
   }
   const deliveringFee = 2.5;
   return (
@@ -15,7 +14,7 @@ const Total = ({ cart }) => {
           <p>{FormatPrice(subTotal)}</p>
         </div>
         <div>
-          <p>Frais de libraison</p>
+          <p>Frais de livraison</p>
           <p>{FormatPrice(deliveringFee)}</p>
         </div>
       </div>

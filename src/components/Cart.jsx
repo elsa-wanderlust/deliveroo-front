@@ -14,9 +14,7 @@ const Cart = ({ cart, setCart }) => {
             <CartDetails
               key={elem.name}
               index={index}
-              item={elem.name}
-              price={elem.price}
-              quantity={elem.quantity}
+              itemDetails={elem}
               cart={cart}
               setCart={setCart}
             />
